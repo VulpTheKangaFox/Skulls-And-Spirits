@@ -1,0 +1,33 @@
+{
+  "type": "skullsandspirits:keg_brewing",
+  "brewing_time": 6000,
+  "fluid_amount": 250,
+  "fluid_ingredient": {
+    "fluid": "minecraft:water"
+  },
+  "item_ingredients": [
+    [
+      {
+        "item": "minecraft:soul_sand"
+      },
+      {
+        "item": "minecraft:soul_soil"
+      }
+    ],
+    {
+      "item": "minecraft:smooth_basalt"
+    },
+    {
+      "item": "minecraft:bone"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    }
+  ],
+  "result": {
+    "id": "skullsandspirits:gravekeepers_brew"
+  },
+  "vessel_ingredient": {
+    "item": "skullsandspirits:mug"
+  }
+}

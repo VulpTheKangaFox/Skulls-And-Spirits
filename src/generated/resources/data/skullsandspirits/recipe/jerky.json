@@ -1,0 +1,15 @@
+{
+  "type": "skullsandspirits:draining",
+  "brewing_time": 60,
+  "fluid_ingredient": {
+    "amount": 200,
+    "id": "skullsandspirits:blood"
+  },
+  "ingredient": {
+    "tag": "skullsandspirits:raw_meat"
+  },
+  "item_result": {
+    "count": 1,
+    "id": "skullsandspirits:jerky"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "type": "skullsandspirits:keg_brewing",
+  "brewing_time": 300,
+  "fluid_amount": 200,
+  "fluid_ingredient": {
+    "fluid": "minecraft:water"
+  },
+  "item_ingredients": [
+    [
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "minecraft:crimson_fungus"
+      },
+      {
+        "item": "minecraft:warped_fungus"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "minecraft:red_mushroom"
+      },
+      {
+        "item": "minecraft:crimson_fungus"
+      },
+      {
+        "item": "minecraft:warped_fungus"
+      }
+    ]
+  ],
+  "result": {
+    "id": "minecraft:mushroom_stew"
+  },
+  "vessel_ingredient": {
+    "item": "minecraft:bowl"
+  }
+}

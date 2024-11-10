@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,stacked=false": {
+      "model": "skullsandspirits:block/shoddy_keg",
+      "y": 90
+    },
+    "facing=east,stacked=true": {
+      "model": "skullsandspirits:block/shoddy_keg_stacked",
+      "y": 90
+    },
+    "facing=north,stacked=false": {
+      "model": "skullsandspirits:block/shoddy_keg"
+    },
+    "facing=north,stacked=true": {
+      "model": "skullsandspirits:block/shoddy_keg_stacked"
+    },
+    "facing=south,stacked=false": {
+      "model": "skullsandspirits:block/shoddy_keg",
+      "y": 180
+    },
+    "facing=south,stacked=true": {
+      "model": "skullsandspirits:block/shoddy_keg_stacked",
+      "y": 180
+    },
+    "facing=west,stacked=false": {
+      "model": "skullsandspirits:block/shoddy_keg",
+      "y": 270
+    },
+    "facing=west,stacked=true": {
+      "model": "skullsandspirits:block/shoddy_keg_stacked",
+      "y": 270
+    }
+  }
+}
