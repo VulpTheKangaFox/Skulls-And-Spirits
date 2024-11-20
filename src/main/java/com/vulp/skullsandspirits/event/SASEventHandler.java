@@ -41,16 +41,6 @@ public class SASEventHandler {
     }
 
     @SubscribeEvent
-    public void onKeyInputEvent(InputEvent.Key event) {
-        if (event.getKey() == Minecraft.getInstance().options.keyJump.getKey().getValue() && event.getAction() == InputConstants.PRESS) {
-            Player player = Minecraft.getInstance().player;
-            if (player != null && MulesMightEffect.canDoubleJump(player)) {
-                MulesMightEffect.doDoubleJump(player);
-            }
-        }
-    }
-
-    @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) { // Handles the death info so it loads when our world loads.
         MinecraftServer server = event.getServer();
         DeathSavedData.getOrCreate(server);
