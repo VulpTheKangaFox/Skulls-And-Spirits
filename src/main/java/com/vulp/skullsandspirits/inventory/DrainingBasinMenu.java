@@ -63,16 +63,16 @@ public class DrainingBasinMenu extends AbstractContainerMenu {
             itemstack = itemstack1.copy();
 
             if (index == 1) {
-                if (!this.moveItemStackTo(itemstack1, 4, 39, true)) {
+                if (!this.moveItemStackTo(itemstack1, 3, 39, true)) {
                     return ItemStack.EMPTY;
                 }
                 slot.onQuickCraft(itemstack1, itemstack);
             } else if (index == 0) {
-                if (!this.moveItemStackTo(itemstack1, 4, 39, false)) {
+                if (!this.moveItemStackTo(itemstack1, 3, 39, false)) {
                     return ItemStack.EMPTY;
                 }
             } else if (index == 2) {
-                if (!this.moveItemStackTo(itemstack1, 4, 39, false)) {
+                if (!this.moveItemStackTo(itemstack1, 3, 39, false)) {
                     return ItemStack.EMPTY;
                 }
             } else if (index >= 3 && index < 39) {
