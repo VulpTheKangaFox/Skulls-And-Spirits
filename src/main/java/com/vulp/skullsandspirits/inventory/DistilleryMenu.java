@@ -1,6 +1,7 @@
 package com.vulp.skullsandspirits.inventory;
 
 import com.vulp.skullsandspirits.inventory.slot.SASSlots;
+import com.vulp.skullsandspirits.item.DrinkItem;
 import com.vulp.skullsandspirits.util.DrinkTier;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -67,9 +68,69 @@ public class DistilleryMenu extends AbstractContainerMenu {
 		return this.distilleryData.get(0);
 	}
 
+	// TODO: Get this sorted. Employ GPT if you gotta.
 	@Override
 	public ItemStack quickMoveStack(Player player, int index) {
-		return null;
+		ItemStack itemstack = ItemStack.EMPTY;
+		Slot slot = this.slots.get(index);
+
+		if (slot.hasItem()) {
+			ItemStack itemstack1 = slot.getItem();
+			itemstack = itemstack1.copy();
+
+			// Check if the slot is one of the 5 drink slots
+			if (index >= 0 && index < 5) {
+				// Attempt to move item from drink slots to player inventory (index 5 and beyond)
+				if (!this.moveItemStackTo(itemstack1, 5, this.slots.size(), true)) {
+					return ItemStack.EMPTY;
+				}
+				slot.onQuickCraft(itemstack1, itemstack);
+			} else {
+				// Handle moving items from player inventory to drink slots
+				int tierLimit = this.distilleryData.get(0); // Get the allowed tier limit
+				if (itemstack1.getItem() instanceof DrinkItem) {
+					DrinkTier itemTier = DrinkItem.getTier(itemstack1);
+					boolean moved = false;
+
+					for (int i = 0; i <= tierLimit; i++) {
+						Slot targetSlot = this.slots.get(i);
+						if (targetSlot instanceof SASSlots.DrinkItemSlot drinkSlot && drinkSlot.tier == itemTier) {
+							if (this.moveItemStackTo(itemstack1, i, i + 1, false)) {
+								moved = true;
+								break;
+							}
+						}
+					}
+
+					if (!moved) {
+						return ItemStack.EMPTY;
+					}
+				} else {
+					// Attempt to move non-drink items to player inventory or other valid slots
+					if (index < this.slots.size() - 36) {
+						if (!this.moveItemStackTo(itemstack1, this.slots.size() - 36, this.slots.size(), false)) {
+							return ItemStack.EMPTY;
+						}
+					} else if (!this.moveItemStackTo(itemstack1, 5, this.slots.size() - 36, false)) {
+						return ItemStack.EMPTY;
+					}
+				}
+			}
+
+			if (itemstack1.isEmpty()) {
+				slot.setByPlayer(ItemStack.EMPTY);
+			} else {
+				slot.setChanged();
+			}
+
+			if (itemstack1.getCount() == itemstack.getCount()) {
+				return ItemStack.EMPTY;
+			}
+
+			slot.onTake(player, itemstack1);
+		}
+
+		return itemstack;
 	}
 
 	@Override

@@ -38,7 +38,7 @@ public class SASSlots {
 
     public static class DrinkItemSlot extends Slot {
 
-        private final DrinkTier tier;
+        public final DrinkTier tier;
 
         public DrinkItemSlot(Container container, DrinkTier tier, int slot, int x, int y) {
             super(container, slot, x, y);
@@ -47,12 +47,11 @@ public class SASSlots {
 
         @Override
         public boolean mayPlace(ItemStack stack) {
-            // Check if the item is a DrinkItem and has the correct tier
             if (stack.getItem() instanceof DrinkItem) {
                 DrinkTier stackTier = DrinkItem.getTier(stack);
-                return stackTier == this.tier; // Ensure it matches this slot's tier
+                return stackTier == this.tier;
             }
-            return false; // Not valid if not a DrinkItem
+            return false;
         }
 
     }
