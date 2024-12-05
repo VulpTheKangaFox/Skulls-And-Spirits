@@ -152,8 +152,8 @@ public class DistilleryBaseBlockEntity extends BaseContainerBlockEntity {
 	@Override
 	protected @NotNull Component getDefaultName() {
 		DrinkTier tier = DrinkTier.fromInt(this.tier + 1);
-		MutableComponent tierPrefix = Component.translatable("item.skullsandspirits.drink_tier." + tier.getGrade()).withStyle(ChatFormatting.BOLD, DrinkItem.getTierColor(tier, false));
-		return tierPrefix.append(" ").append(Component.translatable("container." + SkullsAndSpirits.MODID + ".distillery"));
+		Component tierPrefix = Component.translatable("item.skullsandspirits.drink_tier." + tier.getGrade()).withStyle(ChatFormatting.BOLD, DrinkItem.getTierColor(tier, false));
+		return Component.literal("").append(tierPrefix).append(" ").append(Component.translatable("container." + SkullsAndSpirits.MODID + ".distillery").withStyle(ChatFormatting.DARK_GRAY));
 	}
 
 	@Override

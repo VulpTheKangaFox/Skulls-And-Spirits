@@ -9,6 +9,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
@@ -88,6 +89,12 @@ public class DistilleryScreen extends AbstractContainerScreen<DistilleryMenu> {
 			} else {
 				guiGraphics.blit(DISTILLERY_SPRITE_LOCATION, i + 27 + k * 37, j + 38, 180, 12, 15, 12);
 			}
+		}
+		for (int k = 0; k < 5; k++) {
+			int textX = i + k * 37 + 13;
+			int textY = j + 56;
+			DrinkTier drinkTier = DrinkTier.fromInt(k);
+			guiGraphics.drawString(this.font, Component.literal(drinkTier.getGrade().toUpperCase()).withStyle(ChatFormatting.BOLD), textX, textY, 5592405, false);
 		}
 	}
 
