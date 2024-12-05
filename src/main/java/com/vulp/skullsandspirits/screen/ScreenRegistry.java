@@ -11,6 +11,7 @@ public class ScreenRegistry {
     private void registerScreens(RegisterMenuScreensEvent event) {
         event.register(MenuRegistry.KEG.get(), KegScreen::new);
         event.register(MenuRegistry.DRAINING_BASIN.get(), DrainingBasinScreen::new);
+        event.register(MenuRegistry.DISTILLERY.get(), DistilleryScreen::new);
     }
 
 }

@@ -16,5 +16,6 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<KegBlockEntity>> SHODDY_KEG = BLOCK_ENTITY_TYPES.register("shoddy_keg", () -> BlockEntityType.Builder.of(KegBlockEntity::new, BlockRegistry.SHODDY_KEG.get()).build(null));
     public static final Supplier<BlockEntityType<DrainingBasinBlockEntity>> DRAINING_BASIN = BLOCK_ENTITY_TYPES.register("draining_basin", () -> BlockEntityType.Builder.of(DrainingBasinBlockEntity::new, BlockRegistry.DRAINING_BASIN.get()).build(null));
     public static final Supplier<BlockEntityType<GravestoneBlockEntity>> GRAVESTONE = BLOCK_ENTITY_TYPES.register("gravestone", () -> BlockEntityType.Builder.of(GravestoneBlockEntity::new, BlockRegistry.GRAVESTONE.get()).build(null));
+    public static final Supplier<BlockEntityType<DistilleryBaseBlockEntity>> DISTILLERY_BASE = BLOCK_ENTITY_TYPES.register("distillery_base", () -> BlockEntityType.Builder.of(DistilleryBaseBlockEntity::new, BlockRegistry.DISTILLERY_BASE.get()).build(null));
 
 }

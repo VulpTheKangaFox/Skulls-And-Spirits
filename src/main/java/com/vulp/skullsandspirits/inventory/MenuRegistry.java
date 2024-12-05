@@ -14,5 +14,7 @@ public class MenuRegistry {
 
     public static final Supplier<MenuType<KegMenu>> KEG = MENUS.register("shoddy_keg_menu", () -> new MenuType<>(KegMenu::new, FeatureFlags.DEFAULT_FLAGS));
     public static final Supplier<MenuType<DrainingBasinMenu>> DRAINING_BASIN = MENUS.register("draining_basin_menu", () -> new MenuType<>(DrainingBasinMenu::new, FeatureFlags.DEFAULT_FLAGS));
+    public static final Supplier<MenuType<DistilleryMenu>> DISTILLERY = MENUS.register("distillery_menu", () -> new MenuType<>(DistilleryMenu::new, FeatureFlags.DEFAULT_FLAGS));
+
 
 }

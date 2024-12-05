@@ -28,6 +28,7 @@ public class BlockRegistry {
 
     public static final DeferredHolder<Block, Block> SHODDY_KEG = registerBlockWithSimpleItem("shoddy_keg", () -> new KegBlock(BlockBehaviour.Properties.of().strength(1.5F).mapColor(MapColor.TERRACOTTA_RED)));
     public static final DeferredHolder<Block, Block> DRAINING_BASIN = registerBlockWithSimpleItem("draining_basin", () -> new DrainingBasinBlock(BlockBehaviour.Properties.of().strength(1.5F).mapColor(MapColor.TERRACOTTA_RED)));
+    public static final DeferredHolder<Block, Block> DISTILLERY_BASE = registerBlockWithSimpleItem("distillery_base", () -> new DistilleryBaseBlock(BlockBehaviour.Properties.of().strength(1.5F).mapColor(MapColor.TERRACOTTA_RED)));
     public static final DeferredHolder<Block, Block> GRAVESTONE = registerBlockWithSimpleItem("gravestone", () -> new GravestoneBlock(BlockBehaviour.Properties.of().strength(0.75F).mapColor(MapColor.METAL)));
 
     public static final DeferredHolder<Block, Block> BLOOD = registerBlockWithSimpleItem("blood", () -> new LiquidBlock(FluidRegistry.BLOOD.get(), BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).replaceable().noCollission().randomTicks().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)));
