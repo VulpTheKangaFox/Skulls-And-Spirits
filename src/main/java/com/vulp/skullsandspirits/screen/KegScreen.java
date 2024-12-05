@@ -54,7 +54,11 @@ public class KegScreen extends AbstractContainerScreen<KegMenu> {
             guiGraphics.renderTooltip(this.font, this.fluidRenderer.getTooltip(this.menu.getFluid()), Optional.empty(), x, y);
         }
         if (x > i + 148 && y > j + 47 && x < i + 172 && y < j + 73) {
-            guiGraphics.renderTooltip(this.font, List.of(this.menu.getTimeTooltipComponent()), Optional.empty(), x, y);
+            Component timeTooltipComponent = this.menu.getTimeTooltipComponent();
+            if (timeTooltipComponent == null) {
+                return;
+            }
+            guiGraphics.renderTooltip(this.font, List.of(timeTooltipComponent), Optional.empty(), x, y);
         }
     }
 

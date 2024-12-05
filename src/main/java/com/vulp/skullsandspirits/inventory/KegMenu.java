@@ -20,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -159,18 +160,17 @@ public class KegMenu extends AbstractContainerMenu {
         return this.kegData.get(0);
     }
 
+    @Nullable
     public Component getTimeTooltipComponent() {
         int elapsedTicks = this.kegData.get(0);
         int maxTicks = this.kegData.get(1);
 
         if (maxTicks == 0) {
-            return Component.literal("00:00");
+            return null;
         }
 
-        String elapsedTime = SASUtils.ticksToFormattedTime(elapsedTicks);
-        String maxTime = SASUtils.ticksToFormattedTime(maxTicks);
-
-        return Component.literal(elapsedTime + "/" + maxTime);
+        String elapsedTime = SASUtils.ticksToFormattedTimeCompact(maxTicks - elapsedTicks, " ");
+        return Component.literal(elapsedTime);
     }
 
     private static HashSet<Item> getValidVesselItems(Level level) {
