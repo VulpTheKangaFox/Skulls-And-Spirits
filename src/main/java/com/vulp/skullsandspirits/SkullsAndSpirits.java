@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.vulp.skullsandspirits.block.BlockRegistry;
 import com.vulp.skullsandspirits.block.blockentity.BlockEntityRegistry;
 import com.vulp.skullsandspirits.command.SASCommands;
+import com.vulp.skullsandspirits.component.DataComponentRegistry;
 import com.vulp.skullsandspirits.crafting.RecipeRegistry;
 import com.vulp.skullsandspirits.datagen.DataGenHandler;
 import com.vulp.skullsandspirits.effect.EffectRegistry;
@@ -47,6 +48,7 @@ public class SkullsAndSpirits {
                 output.accept(BlockRegistry.GRAVESTONE.get());
                 output.accept(BlockRegistry.SHODDY_KEG.get());
                 output.accept(BlockRegistry.DRAINING_BASIN.get());
+                output.accept(BlockRegistry.DISTILLERY_BASE.get());
                 output.accept(ItemRegistry.MUG.get());
                 output.accept(ItemRegistry.GRAVEKEEPERS_BREW.get());
                 output.accept(ItemRegistry.BLOODWINE.get());
@@ -68,6 +70,7 @@ public class SkullsAndSpirits {
         EffectRegistry.EFFECTS.register(modEventBus);
         FluidRegistry.FLUIDS.register(modEventBus);
         FluidTypeRegistry.FLUID_TYPES.register(modEventBus);
+        DataComponentRegistry.DATA_COMPONENT_TYPES.register(modEventBus);
 
         modEventBus.register(new ScreenRegistry());
         modEventBus.register(new DataGenHandler());
